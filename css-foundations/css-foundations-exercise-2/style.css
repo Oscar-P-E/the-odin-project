@@ -1,0 +1,24 @@
+.something {
+  background-color: hsl(0, 100%, 83%);
+  font-family: Verdana, "DejaVu Sans", sans-serif;
+}
+
+.cooler {
+  font-size: 24px;
+}
+
+#one,
+#another {
+  font-family: "Gill Sans Nova", "Helvetica Neue", Helvetica, Arial;
+}
+
+#one {
+  color: hsl(240, 100%, 50%);
+  font-size: 36px;
+}
+
+#another {
+  background-color: hsl(120, 100%, 75%);
+  font-size: 24px;
+  font-weight: bold;
+}
