@@ -28,6 +28,45 @@ const paraPinkCont = document.createElement("p");
 paraPinkCont.classList.add("para-pink-container");
 paraPinkCont.textContent = "ME TOO!";
 
+const btn = document.querySelector("#btn");
+btn.onclick = () => alert("Hello World");
+
+const btn2 = document.querySelector("#btn2");
+btn2.addEventListener("click", () => {
+  alert("Hello World");
+});
+
+function alertFunction() {
+  alert("YAY! YOU DID IT!");
+}
+// METHOD 1
+// (inline the html there is a call to the named function alertFunction below)
+
+// METHOD 2
+// btn3.onclick = alertFunction;
+
+// METHOD 3
+// btn3.addEventListener("click", alertFunction);
+
+btn.addEventListener("click", function (e) {
+  console.log(e.target);
+});
+
+btn.addEventListener("click", function (e) {
+  e.target.style.background = "blue";
+});
+
+// buttons is a node list. It looks and acts much like an array.
+const buttonsGrp1 = document.querySelectorAll("#container2 > button");
+
+// we use the .forEach method to iterate through each button
+buttonsGrp1.forEach((button) => {
+  // and for each one we add a 'click' listener
+  button.addEventListener("click", () => {
+    alert(button.id);
+  });
+});
+
 pinkContainer.appendChild(h1PinkCont);
 pinkContainer.appendChild(paraPinkCont);
 
