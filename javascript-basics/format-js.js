@@ -1,30 +1,32 @@
-const band = {
-  name: "XYZ",
-  nationality: "Australia",
-  genre: "Rock",
-  members: 3,
-  formed: 1981,
-  split: 2001,
-  albums: [
-    {
-      name: "Maths is Fun",
-      released: 1981,
-    },
-    {
-      name: "Notes Down Under",
-      released: 1989,
-    },
-    {
-      name: "Kangaroo Jam",
-      released: 1999,
-    },
-  ],
+// Object basics 3
+
+// In this task, we want you to return to the cat object literal from Task 1.
+// We want you to rewrite the greeting() method so that it logs "Hello, said
+// Bertie the Cymric." to the browser's console, but in a way that will work
+// across any cat object of the same structure, regardless of its name or breed.
+
+// When you are done, write your own object called cat2, which has the same
+// structure, exactly the same greeting() method, but a different name, breed,
+// and color.
+
+// Call both greeting() methods to check that they log appropriate greetings
+// to the console.
+
+const cat = {
+  name: "Bertie",
+  breed: "Cymric",
+  color: "white",
+  greeting: function () {
+    // console.log("Meow!");
+    console.log(`Hello, said ${this.name} the ${this.breed}.`);
+  },
 };
 
-bandInfo = `${band.name} was a ${band.genre} band from ${
-  band.nationality
-}. They were active for ${band.split - band.formed} years (${band.formed} - ${
-  band.split
-}). Their first album ${band.albums[0].name} was released in ${
-  band.albums[0].released
-}.`;
+const cat2 = {
+  name: "Fluffy",
+  breed: "Domestic Long Hair",
+  color: "ginger",
+  greeting: function () {
+    console.log(`Hello, said ${this.name} the ${this.breed}.`);
+  },
+};
