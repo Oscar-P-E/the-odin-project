@@ -19,6 +19,56 @@
   </body>
 
   <script>
-    const person = {};
+    const person = {
+      name: {
+        first: "Bob",
+        last: "Smith",
+      },
+      age: 32,
+      // bio: function () {
+      bio() {
+        console.log(
+          `${this.name.first} ${this.name.last} is ${this.age} years old.`
+        );
+      },
+      // introduceSelf: function () {
+      introduceSelf() {
+        console.log(`Hi! I'm ${this.name.first}.`);
+      },
+    };
+
+    const myDataName = "height";
+    const myDataValue = "1.75m";
+    person[myDataName] = myDataValue;
+
+    // Define the "shape" of an object not using constructors:
+    function createPerson(name) {
+      const obj = {};
+      obj.name = name;
+      obj.introduceSelf = function () {
+        console.log(`Hi! My name is ${this.name}.`);
+      };
+      return obj;
+    }
+
+    const salva = createPerson("Salva");
+    salva.name;
+    salva.introduceSelf();
+
+    const eddie = createPerson("Eddie");
+    eddie.name;
+    eddie.introduceSelf();
+
+    // Using constructors:
+    function Person(name) {
+      this.name = name;
+      this.introduceSelf = function () {
+        console.log(`Hi! I'm ${this.name}.`);
+      };
+    }
+
+    const sally = new Person("Sally");
+    sally.name;
+    sally.introduceSelf();
   </script>
 </html>
