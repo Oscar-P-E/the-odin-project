@@ -1,32 +1,32 @@
-// Object basics 3
+// Object basics 4
 
-// In this task, we want you to return to the cat object literal from Task 1.
-// We want you to rewrite the greeting() method so that it logs "Hello, said
-// Bertie the Cymric." to the browser's console, but in a way that will work
-// across any cat object of the same structure, regardless of its name or breed.
+// In the code you wrote for Task 3, the greeting() method is defined
+// twice, once for each cat. This isn't ideal (specifically, it violates
+// a principle in programming sometimes called DRY or
+// "Don't Repeat Yourself").
 
-// When you are done, write your own object called cat2, which has the same
-// structure, exactly the same greeting() method, but a different name, breed,
-// and color.
+// In this task we want you to improve the code so greeting() is only
+// defined once, and every cat instance gets its own greeting() method.
+// Hint: you should use a JavaScript constructor to create cat instances.
 
-// Call both greeting() methods to check that they log appropriate greetings
-// to the console.
+// const cat = {
+//   name: "Bertie",
+//   breed: "Cymric",
+//   color: "white",
+//   greeting: function () {
+//     console.log("Meow!");
+//   },
+// };
 
-const cat = {
-  name: "Bertie",
-  breed: "Cymric",
-  color: "white",
-  greeting: function () {
-    // console.log("Meow!");
+function Cat(name, breed, color) {
+  this.name = name;
+  this.breed = breed;
+  this.color = color;
+  this.greeting = function () {
     console.log(`Hello, said ${this.name} the ${this.breed}.`);
-  },
-};
+  };
+}
 
-const cat2 = {
-  name: "Fluffy",
-  breed: "Domestic Long Hair",
-  color: "ginger",
-  greeting: function () {
-    console.log(`Hello, said ${this.name} the ${this.breed}.`);
-  },
-};
+const bertie = new Cat("Bertie", "Cymric", "white");
+const fluffy = new Cat("Fluffy", "Domestic Long Hair", "ginger");
+const toby = new Cat("Toby", "Tabby", "black and white");
